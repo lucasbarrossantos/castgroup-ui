@@ -1,8 +1,7 @@
-import { FuncionarioService } from './../funcionario.service';
 import { Funcionario } from './../../shared/model/funcionario.model';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-funcionario-detalhe',
@@ -12,60 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FuncionarioDetalheComponent implements OnInit {
   funcionario: Funcionario;
 
-  pt = {
-    firstDayOfWeek: 0,
-    dayNames: [
-      'Domingo',
-      'Segunda',
-      'Terça',
-      'Quarta',
-      'Quinta',
-      'Sexta',
-      'Sábado'
-    ],
-    dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-    dayNamesMin: ['Do', 'Se', 'Te', 'Qu', 'Qu', 'Se', 'Sa'],
-    monthNames: [
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro'
-    ],
-    monthNamesShort: [
-      'Jan',
-      'Fev',
-      'Mar',
-      'Abr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Ago',
-      'Set',
-      'Out',
-      'Nov',
-      'Dez'
-    ],
-    today: 'Hoje',
-    clear: 'Limpar'
-  };
-
   constructor(
-    private funcionarioService: FuncionarioService,
     private title: Title,
     private route: ActivatedRoute,
-    private router: Router,
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('Nova turma');
+    this.title.setTitle('Novo Funcionário');
     this.load();
   }
 
@@ -78,10 +30,6 @@ export class FuncionarioDetalheComponent implements OnInit {
         this.title.setTitle('Funcionario ' + funcionario.nome);
       }
     }, (error) => console.log('error => ', error));
-
-    if (this.funcionario.id) {
-
-    }
 
   }
 }

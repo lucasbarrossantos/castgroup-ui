@@ -24,17 +24,6 @@ export class FuncionarioResolve implements Resolve<Funcionario> {
 }
 
 export const routes: Routes = [
-    /* {
-        path: '',
-        component:
-    },
-    {
-      path: 'nova',
-      component:
-      resolve: {
-            funcionario:
-        }
-    }, */
     {
       path: ':id',
       component: FuncionarioDetalheComponent,
