@@ -1,0 +1,62 @@
+<div class="container-custom">
+  <p-card styleClass="ui-card-shadow">
+    <div class="ui-g">
+      <form #f="ngForm" autocomplete="off" class="ui-g-12 ui-md-12" >
+        <div class="ui-g-12">
+          <h1> Detalhes do Funcionário {{ ' - ' + funcionario.nome }} </h1>
+          <hr/>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Nome: </label>
+            <span> {{ funcionario.nome }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Matrícula: </label>
+            <span class="matricula"> {{ funcionario.matricula }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Data de nascimento: </label>
+            <span> {{ funcionario.dataDeNascimento | date:'dd/MM/yyyy' }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Data de contratação: </label>
+            <span> {{ funcionario.dataDeContratacao | date:'dd/MM/yyyy' }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+            <h3> Dados do endereço </h3>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Nome da rua:</label>
+            <span> {{ funcionario.endereco.rua }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Bairro: </label>
+            <span> {{ funcionario.endereco.bairro }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Cidade: </label>
+            <span> {{ funcionario.endereco.cidade + '/' + funcionario.endereco.estado }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Complemento: </label>
+            <span> {{ funcionario.endereco.complemento }} </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Número: </label>
+            <span> {{ funcionario.endereco.numero }} </span>
+        </div>
+        
+      </form>
+    </div>
+  </p-card>
+</div>
